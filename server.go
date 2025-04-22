@@ -54,7 +54,7 @@ func startServer(cfg *apiConfig) {
 
 	server := &http.Server{
 		Handler: mux,
-		Addr:    ":8080",
+		Addr:    ":" + os.Getenv("DB_PORT"),
 	}
 
 	log.Fatal(server.ListenAndServe())
