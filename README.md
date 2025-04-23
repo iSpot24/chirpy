@@ -23,9 +23,9 @@ Chirpy is a lightweight Twitter-like microblogging API built in Go. It features 
 ## 📦 Endpoints
 ### 🔧 System & Admin
 
-* GET	/api/healthz   -> Health check
-* GET	/admin/metrics ->	Application metrics (TODO, right now it's just a dummy endpoint)
-* POST /admin/reset  ->	Delete all users (admin)
+* GET	/api/healthz   -> Basic readiness
+* GET	/admin/metrics-> Application metrics (TODO, right now it's just a dummy endpoint)
+* POST [/admin/reset](docs/reset.md)  ->	Delete all users with associated records (admin)
 
 ### 👤 Authentication & Users
 
@@ -69,3 +69,15 @@ Install the `chirpy` using `go install`:
 go install github.com/iSpot24/chirpy
 ```
 
+Set up your .env file. Since Polka webhook is simulated, the POLKA_KEY from the example is expected.
+
+```yaml
+DB_DRIVER = "postgres"
+DB_PORT = "wanted_localhost_port"
+DB_URL = "postgres://postgres_user:postgres_pass@localhost:5432/chirpy?sslmode=disable"
+
+JWT_SECRET = "your_generated_jwt_secret"
+POLKA_KEY = "f271c81ff7084ee5b99a5091b42d486e"
+```
+
+Additionally, PLATFORM can be set to `dev` to gain access to [/admin/reset](docs/reset.md) endpoint that wipes database.
