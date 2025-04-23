@@ -29,22 +29,22 @@ Chirpy is a lightweight Twitter-like microblogging API built in Go. It features 
 
 ### 👤 Authentication & Users
 
-* POST	/api/login   ->	 Log in and get JWT tokens
-* POST	/api/refresh ->	 Refresh JWT token
-* POST	/api/revoke	 ->  Revoke access token
-* POST	/api/users	 ->  Create new user
-* PUT	  /api/users	 ->  Update current user info
+* POST	[/api/login](docs/login.md) ->	 Log in and get JWT tokens
+* POST	[/api/refresh](docs/refresh.md) ->	 Refresh JWT token
+* POST	[/api/revoke](docs/revoke.md)	 ->  Revoke access token
+* POST	[/api/users](docs/users_post.md)	 ->  Create new user
+* PUT	  [/api/users](docs/users_put.md)	 ->  Update current user info
   
 ### 🐦 Chirps
 
-* POST	/api/chirps	-> Create a new chirp
-* GET	/api/chirps	-> List all chirps
-* GET	/api/chirps/{chirpID} -> Get chirp by ID
-* DELETE	/api/chirps/{chirpID} -> Delete chirp by ID
+* POST	[/api/chirps](docs/chirps_post.md)	-> Create a new chirp
+* GET	[/api/chirps](docs/chirps_get.md)	-> List all chirps
+* GET	[/api/chirps/{chirpID}](docs/chirp_get.md) -> Get chirp by ID
+* DELETE	[/api/chirps/{chirpID}](docs/chirp_delete.md) -> Delete chirp by ID
 
 ### 📡 Webhooks
 
-* POST	/api/polka/webhooks	-> Mark user as Chirpy Red (Polka)
+* POST	[/api/polka/webhooks](docs/polka.md)	-> Mark user as Chirpy Red (Polka)
 
 ### 🖼️ Static Files
 
